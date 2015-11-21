@@ -39,7 +39,7 @@ For instance, the following are candy strings:
 - "boo"
 - "bo\"oo"
 - bHere the wrapper char is the lower case B letterb
-- *O*
+- \*O\*
 
 
 

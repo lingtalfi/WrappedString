@@ -18,7 +18,7 @@ findCandyStringEndPos
 2015-11-21
 
 
-Tries to find a valid candy string
+Tries to find a valid [candy string](https://github.com/lingtalfi/WrappedString#candy-string)
 starting from the given pos,
 and returns the position of the end symbol in case of success.
 
