@@ -17,6 +17,34 @@ When the end symbol and the begin symbol are identical, the wrapped string is ca
 
 
 
+The wrapped string tool is described in the [WrappedStringTool documentation](https://github.com/lingtalfi/WrappedString/blob/master/WrappedStringTool.md)
+
+
+
+
+Nomenclature
+----------------
+
+### candy string 
+
+A string which is wrapped by a given symbol.
+The wrapping symbol can be used literally inside of the wrapped string by using 
+the [quote escape mechanism](https://github.com/lingtalfi/ConventionGuy/blob/master/convention.quotesEscapingModes.eng.md).
+
+
+
+For instance, the following are candy strings:
+
+- "I'm a candy string wrapped with quotes"
+- "boo"
+- "bo\"oo"
+- bHere the wrapper char is the lower case B letterb
+- *O*
+
+
+
+
+
 
 Dependencies
 ------------------
@@ -29,6 +57,10 @@ Dependencies
 History Log
 ------------------
     
+- 1.1.0 -- 2015-11-21
+
+    - add WrappedStringTool::findCandyStringEndPos
+        
 - 1.0.0 -- 2015-11-20
 
     - initial commit

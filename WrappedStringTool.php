@@ -44,25 +44,34 @@ class WrappedStringTool
 //        return false;
 //    }
 //
-//    /**
-//     * Tries to find a valid candy string starting from the given pos,
-//     * and returns the position of the end symbol in case of success.
-//     *
-//     *
-//     * @return false|int,
-//     *                      false in case of failure
-//     *                      the position of the last symbol in case of success
-//     */
-//    public static function findCandyStringEndPos($string, $symbol, $pos = 0, $escapingMode = 1)
-//    {
-//        if ($pos === mb_strpos($string, $symbol)) {
-//            $symbolLen = mb_strlen($symbol);
-//            if (false !== $endPos = EscapeTool::getNextUnescapedSymbolPos($string, $symbol, $pos + $symbolLen, $escapingMode)) {
-//                return $endPos;
-//            }
-//        }
-//        return false;
-//    }
+
+
+    /**
+     * Tries to find a valid candy string starting from the given pos,
+     * and returns the position of the end symbol in case of success.
+     * 
+     * This method doesn't consider the escaping of the first symbol (i.e. it will work
+     * the same whether or not the first symbol is escaped).
+     * 
+     * However, the second symbol is found only if it's not escaped.
+     * 
+     * 
+     * 
+     *
+     * @return false|int,
+     *                      false in case of failure
+     *                      the position of the last symbol in case of success
+     */
+    public static function findCandyStringEndPos($string, $symbol, $pos = 0, $escapeModeRecursive = true)
+    {
+        if ($pos === mb_strpos($string, $symbol)) {
+            $symbolLen = mb_strlen($symbol);
+            if (false !== $endPos = EscapeTool::getNextUnescapedSymbolPos($string, $symbol, $pos + $symbolLen, $escapeModeRecursive)) {
+                return $endPos;
+            }
+        }
+        return false;
+    }
 
 
     /**
