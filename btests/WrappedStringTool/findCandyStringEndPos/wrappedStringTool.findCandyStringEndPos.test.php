@@ -24,7 +24,7 @@ $a = [
     ['ab\"cde\"f', '"', 3, true], // does it find the second symbol if escaped => no
     ['ab\"cde\\\"f', '"', 3, true], // recursive specific
     ['ab\"cde\\\\\"f', '"', 3, true], 
-    ['ab\"cde\\\\\\\"f', '"', 3, true], 
+    ['ab\"cde\\\\\\\"f', '"', 3, true],
     // simple escape mode
     ['abcdef', '"', 0, false],
     ['ab"cdef', '"', 0, false],
@@ -39,6 +39,12 @@ $a = [
     ['ab\"cde\\\"f', '"', 3, false], // simple specific
     ['ab\"cde\\\\\"f', '"', 3, false],
     ['ab\"cde\\\\\\\"f', '"', 3, false],
+    // other chars (2015-11-22)
+    ['*abcde*', '*', 0, true],
+    ['*ab\*cde*', '*', 0, true],
+    ['*ab\*cde*', '**', 0, true],
+    ['**abcde**', '**', 0, true],
+    ['**ab\**cde**', '**', 0, true],
 ];
 
 $b = [
@@ -70,6 +76,12 @@ $b = [
     false,
     false,
     false,
+    // other chars (2015-11-22)
+    6,
+    8,
+    false,    
+    7,
+    10,
 ];
 
 

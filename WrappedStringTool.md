@@ -6,6 +6,9 @@ WrappedStringTool
 This document describes the method of the WrappedStringTool.
 
 
+All the methods described in this document use php [multi bytes functions](http://php.net/manual/en/ref.mbstring.php) 
+when internally manipulating strings.
+
 
 
 
@@ -32,8 +35,28 @@ However, the second symbol is found only if it's not escaped.
 int|false    findCandyStringEndPos ( str:string, str:symbol, int:pos, bool:escapedModeRecursive )
 ```
 
-- symbol: the wrapping symbol
+- symbol: the wrapping symbol, it can contain multiple characters
 - pos: the position of the first symbol (it doesn't matter whether or not the first symbol is escaped)
+
+
+
+
+
+
+isCandyString
+-------------
+2015-11-22
+
+
+Returns whether or not the given string is a valid (properly escaped) [candy string](https://github.com/lingtalfi/WrappedString#candy-string).
+
+
+```php
+bool        isCandyString ( str:string, str:symbol, bool:escapedModeRecursive )
+```
+
+- symbol: the wrapping symbol, it can contain multiple characters
+
 
 
 

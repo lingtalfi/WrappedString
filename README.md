@@ -57,6 +57,10 @@ Dependencies
 History Log
 ------------------
     
+- 1.2.0 -- 2015-11-22
+
+    - add WrappedStringTool::isCandyString
+    
 - 1.1.0 -- 2015-11-21
 
     - add WrappedStringTool::findCandyStringEndPos
