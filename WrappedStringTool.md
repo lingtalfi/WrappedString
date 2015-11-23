@@ -42,6 +42,39 @@ int|false    findCandyStringEndPos ( str:string, str:symbol, int:pos, bool:escap
 
 
 
+getNextWrappedStringInfo
+-------------
+2015-11-23
+
+
+Returns information about the next wrapped string:
+
+The information is either false, if no wrapped string was found, or the following array otherwise:
+
+- 0: mb position of the begin symbol
+- 1: mb position of the char just after the end symbol
+
+
+This is a low level method.
+
+- $mbPos, the mb position of string to start with
+
+                     
+
+Note:
+ 
+it's your responsibility to make the beginSymbol and beginSymbolMbLen match: this method doesn't check it for you.
+Idem with endSymbol and endSymbolMbLen (that's why it's a low level method).
+
+
+```php
+string    getNextWrappedStringInfo ( str:wrappedString, int:mbPos, str:beginSymbol, int:beginSymbolMbLen, str:endSymbol, int:endSymbolMbLen, bool:escapedModeRecursive )
+```
+
+
+
+
+
 
 isCandyString
 -------------

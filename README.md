@@ -57,6 +57,10 @@ Dependencies
 History Log
 ------------------
     
+- 1.3.0 -- 2015-11-23
+
+    - add WrappedStringTool::getNextWrappedStringInfo
+    
 - 1.2.0 -- 2015-11-22
 
     - add WrappedStringTool::isCandyString

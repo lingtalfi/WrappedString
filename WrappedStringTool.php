@@ -11,25 +11,31 @@ class WrappedStringTool
 {
 
 
-//    /**
-//     * @param $mbPos , the mb position in value to start from
-//     * @return false|array of
-//     *                      0: mb position of the begin symbol
-//     *                      1: mb position of the char just after the end symbol
-//     *
-//     */
-//    public static function getNextWrappedStringInfo($value, $mbPos, $beginSymbol, $beginSymbolMbLen, $endSymbol, $endSymbolMbLen, $escapingMode)
-//    {
-//        $ret = false;
-//        if (false !== $bPos = EscapeTool::getNextUnescapedSymbolPos($value, $beginSymbol, $mbPos, $escapingMode)) {
-//            if (false !== $ePos = EscapeTool::getNextUnescapedSymbolPos($value, $endSymbol, $bPos + $beginSymbolMbLen, $escapingMode)) {
-//                $ret = [$bPos, $ePos + $endSymbolMbLen];
-//            }
-//        }
-//        return $ret;
-//    }
-//
-//
+    /**
+     *
+     * Returns information about the next wrapped string.
+     * This is a low level method.
+     *
+     * @param $mbPos , the mb position of string to start with
+     * @return false|array of
+     *                      0: mb position of the begin symbol
+     *                      1: mb position of the char just after the end symbol
+     * 
+     * Note: 
+     *      it's your responsibility to make the beginSymbol and beginSymbolMbLen match: this method doesn't check it for you.
+     *      Idem with endSymbol and endSymbolMbLen (that's why it's a low level method).
+     *
+     */
+    public static function getNextWrappedStringInfo($string, $mbPos, $beginSymbol, $beginSymbolMbLen, $endSymbol, $endSymbolMbLen, $escapeModeRecursive = true)
+    {
+        $ret = false;
+        if (false !== $bPos = EscapeTool::getNextUnescapedSymbolPos($string, $beginSymbol, $mbPos, $escapeModeRecursive)) {
+            if (false !== $ePos = EscapeTool::getNextUnescapedSymbolPos($string, $endSymbol, $bPos + $beginSymbolMbLen, $escapeModeRecursive)) {
+                $ret = [$bPos, $ePos + $endSymbolMbLen];
+            }
+        }
+        return $ret;
+    }
 
 
     /**
