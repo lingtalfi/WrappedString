@@ -1,11 +1,11 @@
 <?php
 
-namespace WrappedString;
+namespace Ling\WrappedString;
 
 /*
  * LingTalfi 2015-11-20
  */
-use Escaper\EscapeTool;
+use Ling\Escaper\EscapeTool;
 
 class WrappedStringTool
 {
